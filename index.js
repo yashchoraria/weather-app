@@ -10,7 +10,7 @@ const userinfocontainer = document.querySelector(".user-info-container");
 //initailly neede variables
 let currenttab = usertab;
 const API_KEY = "17b7d11be8e743e4a0b9b52632ae219f";
-currenttab.classList.add("current-tab");
+currenttab.classList.add("current-tab"); 
 getfromsessionstorage();
 
 function switchtab(clickedtab){
@@ -77,9 +77,9 @@ function renderweatherinfo(weatherinfo){
      const desc = document.querySelector("[data-weatherdesc]");
      const weathericon = document.querySelector("[data-weathericon]");
      const temp = document.querySelector("[data-temp]");
-     const windspeed = document.querySelector("data-wind");
-     const humidity = document.querySelector("data-humidity");
-     const clouds = document.querySelector("data-clouds");
+     const windspeed = document.querySelector("[data-wind]");
+     const humidity = document.querySelector("[data-humidity]");
+     const clouds = document.querySelector("[data-clouds]");
 
      console.log(weatherinfo);
 
@@ -89,8 +89,8 @@ function renderweatherinfo(weatherinfo){
     weathericon.src = `http://openweathermap.org/img/w/${weatherinfo?.weather?.[0]?.icon}.png`;
     temp.innerText = `${weatherinfo?.main?.temp} °C`;
     windspeed.innerText = `${weatherinfo?.wind?.speed} m/s`;
-    humidity.innerText = `${weatherinfo?.wind?.humidity}%`;
-    clouds.innerText = `${weatherinfo?.wind?.clouds?.all}%`;
+    humidity.innerText = `${weatherinfo?.main?.humidity}%`;
+    clouds.innerText = `${weatherinfo?.clouds?.all}%`;
 } 
 
 
